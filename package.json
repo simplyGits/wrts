@@ -1,0 +1,31 @@
+{
+  "name": "wrts",
+  "version": "0.0.0",
+  "description": "node.js library for wrts.nl",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplyGits/wrts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simplyGits/wrts/issues"
+  },
+  "homepage": "https://github.com/simplyGits/wrts#readme",
+  "author": "simply <hello@simplyapps.nl> (http://simplyApps.nl/)",
+  "maintainers": [
+    "Lieuwe Rooijakkers <lieuwerooijakkers@gmail.com> (http://www.lieuwex.me/)"
+  ],
+  "license": "LGPL-3.0",
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "chai": "^2.1.0",
+    "babel": "^5.8.21"
+  },
+  "dependencies": {
+    "request": "^2.60.0",
+    "tough-cookie": "^2.0.0"
+  }
+}
