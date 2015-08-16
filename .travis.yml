@@ -4,8 +4,11 @@ node_js:
   - "0.12"
 install:
   - npm install -g mocha
+  - npm install -g eslint
   - npm install
 before_script:
   - mocha --version
+  - eslint --version
 script:
   - mocha
+  - eslint .
