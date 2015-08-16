@@ -49,16 +49,18 @@ describe('wrts', function () {
 
 	it('should get user info', function (done) {
 		x.getUserInfo(function (e, r) {
+			expect(e).to.not.exist;
 			expect(r).to.be.an('object');
 			expect(r.email).to.equal(options.email);
-			done(e);
+			done();
 		});
 	});
 
 	it('should get lists', function (done) {
 		x.getLists(function (e, r) {
+			expect(e).to.not.exist;
 			expect(r).to.be.an('array');
-			done(e);
+			done();
 		});
 	});
 
