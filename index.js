@@ -19,38 +19,6 @@
 
 var request = require('request');
 
-/**
- * Parses the given `str` as JSON, also replace snake_case to camelCase.
- * @method parseJson
- * @private
- * @param {String} str The string to parse.
- * @return {Object|Array} `str`, but parsed.
- */
-function parseJson (str) {
-	var snakeToCamel = function (val) {
-		if (val.length) { // Also support non-arrays!
-			var res = new Array(val.length);
-			for (var i = 0; i < val.length; i++) {
-				res[i] = snakeToCamel(val[i]);
-			}
-			return res;
-		} else if (val != null && typeof val === 'object') {
-			var res = {};
-			for (var key in val) {
-				var newKey = key.replace(/_([a-zA-Z])/g, function (_, char) {
-					return char.toUpperCase();
-				});
-				res[newKey] = val[key];
-			}
-			return res;
-		} else {
-			return val;
-		}
-	};
-
-	return snakeToCamel(JSON.parse(str));
-}
-
 /*
  * Wraps the given callback to a ugly request callback
  * @method wrapRequestCallback
@@ -94,7 +62,7 @@ var Wrts = (function () {
 			if (err) {
 				callback(err, null);
 			} else {
-				callback(null, parseJson(res.body));
+				callback(null, JSON.parse(res.body));
 			}
 		}));
 	};
@@ -123,7 +91,7 @@ var Wrts = (function () {
 			if (err) {
 				callback(err, null);
 			} else {
-				callback(null, parseJson(res.body));
+				callback(null, JSON.parse(res.body));
 			}
 		}));
 	};
