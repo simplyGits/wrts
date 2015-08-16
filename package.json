@@ -21,8 +21,7 @@
   "license": "LGPL-3.0",
   "devDependencies": {
     "mocha": "^2.2.5",
-    "chai": "^2.1.0",
-    "babel": "^5.8.21"
+    "chai": "^2.1.0"
   },
   "dependencies": {
     "request": "^2.60.0"
