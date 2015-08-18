@@ -19,6 +19,7 @@
 
 var expect = require('chai').expect;
 var wrts = require('../');
+var List = wrts.List;
 var options = null;
 
 try {
@@ -60,6 +61,7 @@ describe('wrts', function () {
 		x.getLists(function (e, r) {
 			expect(e).to.not.exist;
 			expect(r).to.be.an('array');
+			expect(r[0]).to.be.an.instanceof(List);
 			done();
 		});
 	});
