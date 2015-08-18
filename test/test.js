@@ -74,4 +74,13 @@ describe('wrts', function () {
 			done();
 		});
 	});
+
+	it('should get test results', function (done) {
+		x.getResults(function (e, r) {
+			expect(e).to.not.exist;
+			expect(r).to.be.an('array');
+			expect(r).to.not.be.empty;
+			done();
+		});
+	});
 });
