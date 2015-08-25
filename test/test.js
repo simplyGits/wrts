@@ -19,6 +19,7 @@
 
 var expect = require('chai').expect;
 var wrts = require('../');
+var Wrts = wrts.Wrts;
 var List = wrts.List;
 var options = null;
 
@@ -45,7 +46,7 @@ describe('wrts', function () {
 	});
 
 	it('should login', function () {
-		expect(x).to.be.an('object');
+		expect(x).to.be.an.instanceof(Wrts);
 	});
 
 	it('should get user info', function (done) {
