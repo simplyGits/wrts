@@ -58,30 +58,37 @@ describe('wrts', function () {
 		});
 	});
 
-	it('should get lists', function (done) {
-		x.getLists(function (e, r) {
-			expect(e).to.not.exist;
-			expect(r).to.be.an('array');
-			expect(r[0]).to.be.an.instanceof(List);
-			done();
+	describe('lists', function () {
+		it('should get lists', function (done) {
+			x.getLists(function (e, r) {
+				expect(e).to.not.exist;
+				expect(r).to.be.an('array');
+				expect(r[0]).to.be.an.instanceof(List);
+				expect(r[0].created_at).to.be.a('date');
+				done();
+			});
 		});
 	});
 
-	it('should get schools', function (done) {
-		x.getSchools('Wassenaar', function (e, r) {
-			expect(e).to.not.exist;
-			expect(r).to.be.an('array');
-			expect(r).to.not.be.empty;
-			done();
+	describe('schools', function () {
+		it('should get schools', function (done) {
+			x.getSchools('Wassenaar', function (e, r) {
+				expect(e).to.not.exist;
+				expect(r).to.be.an('array');
+				expect(r).to.not.be.empty;
+				done();
+			});
 		});
 	});
 
-	it('should get test results', function (done) {
-		x.getResults(function (e, r) {
-			expect(e).to.not.exist;
-			expect(r).to.be.an('array');
-			expect(r).to.not.be.empty;
-			done();
+	describe('tests', function () {
+		it('should get test results', function (done) {
+			x.getResults(function (e, r) {
+				expect(e).to.not.exist;
+				expect(r).to.be.an('array');
+				expect(r).to.not.be.empty;
+				done();
+			});
 		});
 	});
 });
