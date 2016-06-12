@@ -24,7 +24,7 @@ var List = wrts.List;
 var options = null;
 
 try {
-	options = require('./testOptions.json');
+	options = require('./options.json');
 } catch (e) { // For Travis CI we use environment variables.
 	options = {};
 
