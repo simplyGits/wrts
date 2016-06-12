@@ -36,8 +36,9 @@ if (options.email == null || options.password == null) {
 }
 
 describe('wrts', function () {
-	var x;
+	this.timeout(7000);
 
+	var x;
 	before(function (done) {
 		wrts(options.email, options.password, function (e, r) {
 			x = r;
