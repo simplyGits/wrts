@@ -86,7 +86,6 @@ describe('wrts', function () {
 			x.getResults(function (e, r) {
 				expect(e).to.not.exist;
 				expect(r).to.be.an('array');
-				expect(r).to.not.be.empty;
 				done();
 			});
 		});
