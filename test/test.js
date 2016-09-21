@@ -71,17 +71,6 @@ describe('wrts', function () {
 		});
 	});
 
-	describe('schools', function () {
-		it('should get schools', function (done) {
-			x.getSchools('Wassenaar', function (e, r) {
-				expect(e).to.not.exist;
-				expect(r).to.be.an('array');
-				expect(r).to.not.be.empty;
-				done();
-			});
-		});
-	});
-
 	describe('tests', function () {
 		it('should get test results', function (done) {
 			x.getResults(function (e, r) {
@@ -89,6 +78,17 @@ describe('wrts', function () {
 				expect(r).to.be.an('array');
 				done();
 			});
+		});
+	});
+});
+
+describe('schools', function () {
+	it('should get schools', function (done) {
+		wrts.getSchools('Wassenaar', function (e, r) {
+			expect(e).to.not.exist;
+			expect(r).to.be.an('array');
+			expect(r).to.not.be.empty;
+			done();
 		});
 	});
 });
